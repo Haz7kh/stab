@@ -8,7 +8,7 @@ const AboutUs = () => {
   return (
     <div>
       <section
-        className="relative h-screen bg-cover bg-center text-white"
+        className="relative h-48 sm:h-64 md:h-80 lg:h-100 bg-cover bg-center text-white"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundAttachment: "fixed",
