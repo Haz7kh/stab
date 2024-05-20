@@ -1,92 +1,149 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as Logo } from "../assets/images/logol.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars,
+  faTimes,
+  faChevronDown,
+  faChevronUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleServices = () => setServicesOpen(!servicesOpen);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setServicesOpen(false);
   };
 
+  const closeServices = () => setServicesOpen(false);
+
   return (
-    <header className="bg-navy flex justify-between items-center p-4">
-      <div className="flex items-center">
-        <Link to="/">
-          <Logo className="h-8" />
+    <header className="bg-navy flex justify-between items-center p-4 relative z-50">
+      <Link to="/" onClick={closeMenu}>
+        <img src="/logol.svg" alt="Logo" className="h-12 md:h-16" />{" "}
+        {/* Adjusted logo size */}
+      </Link>
+      <nav className="hidden md:flex space-x-4 text-white">
+        <Link to="/" onClick={closeMenu}>
+          Home
         </Link>
-      </div>
-      <div className="md:hidden">
-        <button
-          onClick={handleMenuToggle}
-          className="text-white focus:outline-none"
-        >
-          <svg
-            className={`h-8 w-8 transition-transform transform ${
-              menuOpen ? "rotate-45" : ""
-            }`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+        <Link to="/about" onClick={closeMenu}>
+          About Us
+        </Link>
+        <div className="relative">
+          <button
+            onClick={toggleServices}
+            className="flex items-center space-x-1 focus:outline-none"
           >
-            {menuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
+            <span>Services</span>
+            {servicesOpen ? (
+              <FontAwesomeIcon icon={faChevronUp} />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
+              <FontAwesomeIcon icon={faChevronDown} />
             )}
-          </svg>
-        </button>
-      </div>
-      <nav className={`md:flex ${menuOpen ? "block" : "hidden"} md:block`}>
-        <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-white">
-          <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>
-              About us
-            </Link>
-          </li>
-          <li>
-            <Link to="/services" onClick={() => setMenuOpen(false)}>
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link to="/projects" onClick={() => setMenuOpen(false)}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="/blog" onClick={() => setMenuOpen(false)}>
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" onClick={() => setMenuOpen(false)}>
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="hidden md:flex justify-end w-full md:w-auto mt-2 md:mt-0">
-        <Link to="/quote" className="bg-orange text-white px-4 py-2 rounded">
-          Get a Quote
+          </button>
+          {servicesOpen && (
+            <div className="absolute top-full left-0 bg-gray-800 text-white mt-1 rounded shadow-lg z-50">
+              <Link
+                to="/services/it"
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={closeServices}
+              >
+                IT Services
+              </Link>
+              <Link
+                to="/services/accounting"
+                className="block px-4 py-2 hover:bg-gray-700"
+                onClick={closeServices}
+              >
+                Accounting Services
+              </Link>
+            </div>
+          )}
+        </div>
+        <Link to="/projects" onClick={closeMenu}>
+          Projects
         </Link>
-      </div>
+        <Link to="/blog" onClick={closeMenu}>
+          Blog
+        </Link>
+        <Link to="/contact" onClick={closeMenu}>
+          Contact Us
+        </Link>
+      </nav>
+      <button
+        onClick={toggleMenu}
+        className="md:hidden text-white z-50 focus:outline-none"
+      >
+        {menuOpen ? (
+          <FontAwesomeIcon icon={faTimes} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
+      </button>
+      <nav
+        className={`fixed top-0 right-0 w-1/2 h-full bg-gray-900 text-white flex flex-col items-end p-4 md:hidden z-40 transition-transform duration-300 ${
+          menuOpen ? "transform translate-x-0" : "transform translate-x-full"
+        }`}
+      >
+        <Link to="/" onClick={toggleMenu} className="mt-8">
+          Home
+        </Link>
+        <Link to="/about" onClick={toggleMenu} className="mt-8">
+          About Us
+        </Link>
+        <div className="relative mt-8">
+          <button
+            onClick={toggleServices}
+            className="flex items-center space-x-1 focus:outline-none"
+          >
+            <span>Services</span>
+            {servicesOpen ? (
+              <FontAwesomeIcon icon={faChevronUp} />
+            ) : (
+              <FontAwesomeIcon icon={faChevronDown} />
+            )}
+          </button>
+          {servicesOpen && (
+            <div className="bg-gray-800 text-white mt-1 rounded shadow-lg z-50">
+              <Link
+                to="/services/it"
+                onClick={toggleMenu}
+                className="block px-4 py-2 hover:bg-gray-700"
+              >
+                IT Services
+              </Link>
+              <Link
+                to="/services/accounting"
+                onClick={toggleMenu}
+                className="block px-4 py-2 hover:bg-gray-700"
+              >
+                Accounting Services
+              </Link>
+            </div>
+          )}
+        </div>
+        <Link to="/projects" onClick={toggleMenu} className="mt-8">
+          Projects
+        </Link>
+        <Link to="/blog" onClick={toggleMenu} className="mt-8">
+          Blog
+        </Link>
+        <Link to="/contact" onClick={toggleMenu} className="mt-8">
+          Contact Us
+        </Link>
+      </nav>
+      <Link
+        to="/quote"
+        className="hidden md:block bg-orange text-white px-4 py-2 rounded"
+      >
+        Get a Quote
+      </Link>
     </header>
   );
 };

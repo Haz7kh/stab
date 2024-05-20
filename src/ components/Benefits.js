@@ -36,14 +36,13 @@ const Benefits = () => {
           </ul>
         </div>
         <div className="md:w-1/2 p-8">
-          <div className="relative">
-            <img
-              src={choose}
-              alt="Benefits"
-              className="w-full rounded-lg shadow-lg"
-            />
-            <div className="absolute top-0 left-0 bg-blue-500 text-white px-4 py-2 rounded-br-lg">
-              Trusted by 8800 Customers
+          <div className="relative flex justify-center items-center">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl scale-animation">
+              <img
+                src={choose}
+                alt="Benefits"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

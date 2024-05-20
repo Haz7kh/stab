@@ -1,71 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebook, FaYoutube, FaTimes } from "react-icons/fa";
+import logo from "../assets/images/logol.svg"; // Import your logo
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-grey text-white p-4">
+    <footer className="bg-black text-white py-12">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col md:flex-row md:space-x-8 mb-4 md:mb-0">
-          <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About Us</Link>
-            </li>
-            <li>
-              <Link to="/services">Services</Link>
-            </li>
-            <li>
-              <Link to="/projects">Projects</Link>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact Us</Link>
-            </li>
-          </ul>
+        <div className="text-center md:text-left mb-8 md:mb-0">
+          <img src={logo} alt="Logo" className="h-16" />{" "}
+          {/* Adjust the size as needed */}
         </div>
-        <div className="flex flex-col md:flex-row md:space-x-8 mb-4 md:mb-0">
-          <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-            <li>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                Instagram
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="flex flex-col items-center">
-          <form className="flex flex-col md:flex-row items-center">
-            <label className="block mb-2 md:mb-0 md:mr-2" htmlFor="newsletter">
-              Newsletter Signup
-            </label>
+        <div className="text-center md:text-right">
+          <h3 className="text-xl mb-4">
+            Stay up-to-date with the latest releases.
+          </h3>
+          <form className="flex justify-center md:justify-end items-center">
             <input
-              className="p-2 border rounded mb-2 md:mb-0 md:mr-2"
               type="email"
-              id="newsletter"
-              name="newsletter"
-              placeholder="Your email"
+              placeholder="Your Email Address"
+              className="p-2 rounded-l-full bg-gray-800 text-white focus:outline-none"
             />
-            <button className="bg-orange text-white px-4 py-2 rounded">
-              Subscribe
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 rounded-r-full"
+            >
+              <FaTimes />
             </button>
           </form>
+          <div className="flex justify-center md:justify-end space-x-4 mt-4">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <FaInstagram className="text-xl" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <FaFacebook className="text-xl" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer">
+              <FaYoutube className="text-xl" />
+            </a>
+            <a href="https://example.com" target="_blank" rel="noreferrer">
+              <FaTimes className="text-xl" />
+            </a>
+          </div>
         </div>
       </div>
-      <div className="text-center mt-4">
-        <p>© 2024 [Company Name]. All rights reserved.</p>
+      <div className="text-center mt-8">
+        <p className="text-gray-500">&copy; 2024 Stockholm T AB</p>
+        <div className="flex justify-center space-x-4 mt-2">
+          <Link to="/docs" className="text-gray-500">
+            Docs
+          </Link>
+          <Link to="/help" className="text-gray-500">
+            Help Center
+          </Link>
+        </div>
       </div>
     </footer>
   );

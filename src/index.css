@@ -44,3 +44,19 @@ body {
 .hamburger-icon.closed {
   transform: rotate(0deg);
 }
+
+/* benefits animate */
+
+@keyframes scaleUp {
+  0%,
+  100% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.scale-animation {
+  animation: scaleUp 3s infinite;
+}

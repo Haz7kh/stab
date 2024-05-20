@@ -6,6 +6,11 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import "animate.css";
 import ContactUs from "./pages/ContactUs";
+import Services from "./pages/Services";
+import Blog from "./pages/Blog";
+import BlogPostWebDeveloper from "./blogPosts/BlogPostWebDeveloper";
+import BlogPostRedovisningstips from "./blogPosts/BlogPostRedovisningstips";
+import BlogPostBokforingsmetoder from "./blogPosts/BlogPostBokforingsmetoder";
 
 const App = () => {
   return (
@@ -17,6 +22,20 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/services/*" element={<Services />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route
+              path="/blog/web-developer-tips"
+              element={<BlogPostWebDeveloper />}
+            />
+            <Route
+              path="/blog/redovisningstips"
+              element={<BlogPostRedovisningstips />}
+            />
+            <Route
+              path="/blog/bokföringsmetoder"
+              element={<BlogPostBokforingsmetoder />}
+            />
           </Routes>
         </div>
         <Footer />
