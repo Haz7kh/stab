@@ -77,7 +77,7 @@ const Header = () => {
           </li>
           <li>
             <Link to="/contact" onClick={() => setMenuOpen(false)}>
-              Contact Us
+              Contact
             </Link>
           </li>
         </ul>
