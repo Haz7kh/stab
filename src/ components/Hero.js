@@ -20,10 +20,10 @@ const Hero = () => {
           className="h-12 sm:h-16 mb-4 animated-logo" // Adjust height for responsiveness
         />
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
-          Innovative Solutions for Your Business
+          Innovativa lösningar för ditt företag
         </h1>
         <TypingEffect
-          text="We provide top-notch services to help you grow."
+          text="Vi erbjuder förstklassiga tjänster för att hjälpa er växa."
           speed={50}
           eraseDelay={2000}
           className="text-white text-sm sm:text-lg md:text-xl mt-4 text-center"
@@ -32,7 +32,7 @@ const Hero = () => {
           href="#learn-more"
           className="mt-8 bg-teal text-white px-4 py-2 rounded"
         >
-          <Link to="/about">Learn More</Link>
+          <Link to="/about">Läs mer</Link>
         </a>
       </div>
     </section>

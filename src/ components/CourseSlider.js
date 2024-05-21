@@ -26,20 +26,12 @@ const responsive = {
 };
 
 const CourseCard = ({ image, title, instructor, rating, price, level }) => (
-  <div className="bg-white rounded-lg shadow-md p-4 m-2">
-    <img
-      src={image}
-      alt={title}
-      className="w-full h-48 object-cover rounded-t-lg"
-    />
-    <div className="p-4">
-      <h3 className="text-lg font-bold">{title}</h3>
-      <p className="text-gray-600">{instructor}</p>
-      <div className="flex items-center">
-        <span className="text-yellow-500">⭐ {rating}</span>
-      </div>
-      <p className="text-gray-900 font-bold">{price}</p>
-      <p className="text-gray-600">{level}</p>
+  <div className="bg-white rounded-lg shadow-lg overflow-hidden m-4 card-bg">
+    <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <div className="p-6">
+      <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
+
+      <button className="btn-primary">Läs mer</button>
     </div>
   </div>
 );
@@ -48,8 +40,8 @@ const CourseSlider = () => {
   return (
     <section className="py-16 bg-light-gray">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">
-          Explore Our Services
+        <h2 className="text-3xl text-blue-500 font-bold text-center mb-8">
+          Utforska våra tjänster
         </h2>
         <Carousel
           responsive={responsive}
@@ -59,36 +51,14 @@ const CourseSlider = () => {
         >
           <CourseCard
             image={s1}
-            title="Responsive Web Design with HTML5 & CSS3"
-            instructor="Instructor"
-            rating="5.0 (1)"
-            price="Free"
-            level="Beginner"
+            title="Expert skatteförberedelse och planering"
           />
-          <CourseCard
-            image={s2}
-            title="The Complete Cyber Security Course"
-            instructor="Instructor"
-            rating="4.5 (2)"
-            price="£32.00"
-            level="Expert"
-          />
+          <CourseCard image={s2} title="Tomfattande ekonomisk förvaltning" />
           <CourseCard
             image={s3}
-            title="The Complete Product Management Course"
-            instructor="Jenica Smith"
-            rating="4.0 (2)"
-            price="£55.00"
-            level="Intermediate"
+            title="Anpassade mjukvaruutvecklingslösningar"
           />
-          <CourseCard
-            image={s4}
-            title="The Complete Salesforce Classic Administrator"
-            instructor="Instructor"
-            rating="4.0 (2)"
-            price="£65.00"
-            level="Intermediate"
-          />
+          <CourseCard image={s4} title="Avancerad webbutveckling och design" />
         </Carousel>
       </div>
     </section>

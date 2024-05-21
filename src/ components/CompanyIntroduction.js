@@ -9,12 +9,20 @@ const CompanyIntroduction = () => {
         <div className="md:w-1/2 p-8">
           <h4 className="text-blue-600">Company Introductions</h4>
           <h2 className="text-5xl font-bold text-black mt-4">
-            Start Your Journey With Us
+            Påbörja din resa med oss
           </h2>
           <p className="text-gray-600 mt-4">
-            There are many variations of passages of lorem ipsum available but
-            the majority have suffered alteration in some form by injected
-            humour or randomised words which don't look.
+            Redovisningsbyrå och revisionsbyrå i Stockholm Business & IT.
+            Stockholm T AB är en revisions- och redovisningsbyrå där allt är
+            möjligt. Vi erbjuder kvalificerade tjänster inom de flesta områden
+            som rör redovisning allt från löpande bokföring, ekonomistyrning och
+            företagsanalys till avancerade skattetekniska frågor. Söker du efter
+            en auktoriserad revisor, redovisningsekonom eller auktoriserad
+            redovisningskonsult behöver du inte leta längre – de finns alla
+            under vårt tak. Vårt huvudkontor finns i Stockholm, men våra kunder
+            finns över hela landet.Lär dig av kundfeedback,Professionellt
+            team.Hög besparingspotential. Hög besparingspotential Lär dig av
+            kundfeedback
           </p>
           <div className="flex mt-8">
             <div className="flex items-center mr-8">
@@ -39,7 +47,7 @@ const CompanyIntroduction = () => {
                 />
               </svg>
               <p className="text-black font-semibold ml-2">
-                Start learning from our experts
+                Håll ditt företag under kontroll
               </p>
             </div>
             <div className="flex items-center">
@@ -64,7 +72,7 @@ const CompanyIntroduction = () => {
                 />
               </svg>
               <p className="text-black font-semibold ml-2">
-                Enhance your skills with us now
+                Prova våra bästa IT-tjänster
               </p>
             </div>
           </div>
@@ -72,7 +80,7 @@ const CompanyIntroduction = () => {
             to="/about"
             className="mt-8 inline-block bg-blue-600 text-white px-6 py-3 rounded-full"
           >
-            Read More
+            Läs mer
           </Link>
         </div>
         <div className="md:w-1/2 flex flex-col md:flex-row items-center justify-center mt-8 md:mt-0">

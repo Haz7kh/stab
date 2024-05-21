@@ -1,8 +1,15 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa";
 import heroImage from "../assets/images/1.jpg";
 import "animate.css";
 import Typing from "react-typing-effect";
+import teamImage1 from "../assets/images/porfile.jpeg";
+import teamImage2 from "../assets/images/porfile.jpeg";
 
 const AboutUs = () => {
   return (
@@ -19,7 +26,7 @@ const AboutUs = () => {
             About Us
           </h1>
           <Typing
-            text="Learn more about our mission and values"
+            text="Läs mer om vår mission och våra värderingar"
             speed={50}
             eraseSpeed={50}
             eraseDelay={2000}
@@ -32,89 +39,83 @@ const AboutUs = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-6 animate__animated animate__fadeIn">
-            Our Mission
+            Vår Mission
           </h2>
           <p className="text-gray-600 mb-8 animate__animated animate__fadeIn">
-            Our mission is to provide top-notch services to help you grow and
-            succeed in your endeavors. We believe in innovation, dedication, and
-            excellence.
+            Vår mission är att vara en ledande partner för våra kunder genom att
+            erbjuda innovativa och kvalitativa lösningar som driver deras
+            framgång. Vi strävar efter att skapa långsiktiga relationer baserade
+            på förtroende, transparens och resultat. Genom att fokusera på
+            kundernas behov och kontinuerligt förbättra våra tjänster, arbetar
+            vi för att överträffa förväntningarna och bidra till en positiv och
+            hållbar utveckling för alla inblandade.
           </p>
           <div className="flex flex-wrap justify-center">
             <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInUp">
               <FaCheckCircle className="h-12 w-12 text-blue-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Innovation</h3>
               <p className="text-gray-600">
-                We constantly strive to innovate and improve our services to
-                meet the needs of our clients.
+                Vi tror på kraften i innovation för att skapa värde och
+                överträffa våra kunders förväntningar genom att ständigt
+                utforska nya idéer och teknologier.
               </p>
             </div>
             <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInUp">
               <FaCheckCircle className="h-12 w-12 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Dedication</h3>
+              <h3 className="text-xl font-bold mb-2">Engagemang</h3>
               <p className="text-gray-600">
-                Our team is dedicated to providing the best possible service and
-                support to our clients.
+                Vi är djupt engagerade i att leverera högsta kvalitet och
+                överträffa våra kunders förväntningar genom varje projekt vi tar
+                oss an.
               </p>
             </div>
             <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInUp">
               <FaCheckCircle className="h-12 w-12 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Excellence</h3>
+              <h3 className="text-xl font-bold mb-2">Excellens</h3>
               <p className="text-gray-600">
-                We strive for excellence in everything we do, ensuring the
-                highest quality standards are met.
+                Vi strävar efter excellens i allt vi gör, genom att ständigt
+                förbättra våra processer och leverera resultat som överträffar
+                förväntningarna.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-100">
+      <section className="py-16 bg-white">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-4xl font-bold mb-6 animate__animated animate__fadeIn">
-            Join Our Team
+            Meet Our Team
           </h2>
-          <p className="text-gray-600 mb-8 animate__animated animate__fadeIn">
-            We're always looking for talented individuals to join our growing
-            team. Check out our current openings and apply today!
-          </p>
           <div className="flex flex-wrap justify-center">
-            <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInUp">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">Software Engineer</h3>
-                <p className="text-gray-600">Location: Remote</p>
-                <p className="text-gray-600">
-                  We are looking for a skilled software engineer to join our
-                  development team. Apply now!
-                </p>
-                <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
-                  Apply Now
-                </button>
+            <div className="w-full md:w-1/4 p-4 animate__animated animate__fadeInUp">
+              <img
+                src={teamImage1}
+                alt="Team Member 1"
+                className="h-40 w-40 rounded-full mx-auto mb-4"
+              />
+              <h3 className="text-xl font-bold">TROY GRAY</h3>
+              <p className="text-gray-600">CEO / FOUNDER</p>
+              <div className="flex justify-center space-x-4 mt-4">
+                <FaFacebook className="h-6 w-6 text-gray-600 hover:text-blue-600" />
+                <FaInstagram className="h-6 w-6 text-gray-600 hover:text-pink-600" />
+
+                <FaLinkedin className="h-6 w-6 text-gray-600 hover:text-blue-700" />
               </div>
             </div>
-            <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInUp">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">Product Manager</h3>
-                <p className="text-gray-600">Location: Remote</p>
-                <p className="text-gray-600">
-                  We are seeking a product manager to lead our product
-                  development initiatives. Apply today!
-                </p>
-                <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
-                  Apply Now
-                </button>
-              </div>
-            </div>
-            <div className="w-full md:w-1/3 p-4 animate__animated animate__fadeInUp">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">UX/UI Designer</h3>
-                <p className="text-gray-600">Location: Remote</p>
-                <p className="text-gray-600">
-                  Join our team as a UX/UI designer and help us create stunning
-                  user experiences. Apply now!
-                </p>
-                <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
-                  Apply Now
-                </button>
+            <div className="w-full md:w-1/4 p-4 animate__animated animate__fadeInUp">
+              <img
+                src={teamImage2}
+                alt="Team Member 2"
+                className="h-40 w-40 rounded-full mx-auto mb-4"
+              />
+              <h3 className="text-xl font-bold">RICHY LACE</h3>
+              <p className="text-gray-600">MARKETING DIRECTOR</p>
+              <div className="flex justify-center space-x-4 mt-4">
+                <FaFacebook className="h-6 w-6 text-gray-600 hover:text-blue-600" />
+                <FaInstagram className="h-6 w-6 text-gray-600 hover:text-pink-600" />
+
+                <FaLinkedin className="h-6 w-6 text-gray-600 hover:text-blue-700" />
               </div>
             </div>
           </div>

@@ -11,7 +11,6 @@ const Home = () => {
     <div className="bg-white text-dark-grey">
       <Hero />
       <Currency />
-
       <CompanyIntroduction />
       <CourseSlider />
       <FunFacts />
