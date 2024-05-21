@@ -60,3 +60,24 @@ body {
 .scale-animation {
   animation: scaleUp 3s infinite;
 }
+
+/* currency bar  */
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* prices bar  */
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
