@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaLaptopCode,
   FaMobileAlt,
@@ -36,7 +37,7 @@ const itServiceData = [
 
 const ITServices = () => {
   return (
-    <div className="relative p-8 min-h-screen overflow-hidden">
+    <div className="relative p-8 min-h-screen overflow-hidden bg-gray-800">
       <div className="relative z-10">
         <h1 className="text-4xl font-bold mb-6 text-white">IT Services</h1>
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -51,6 +52,14 @@ const ITServices = () => {
               <p className="text-gray-200">{service.description}</p>
             </motion.div>
           ))}
+        </div>
+        <div className="flex justify-center mt-8">
+          <Link
+            to="/projects"
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+          >
+            View Our Projects
+          </Link>
         </div>
       </div>
     </div>

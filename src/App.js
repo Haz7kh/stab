@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import BlogPostWebDeveloper from "./blogPosts/BlogPostWebDeveloper";
 import BlogPostRedovisningstips from "./blogPosts/BlogPostRedovisningstips";
 import BlogPostBokforingsmetoder from "./blogPosts/BlogPostBokforingsmetoder";
+import Projects from "./pages/Projects";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/services/*" element={<Services />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/projects" element={<Projects />} />
             <Route
               path="/blog/web-developer-tips"
               element={<BlogPostWebDeveloper />}
